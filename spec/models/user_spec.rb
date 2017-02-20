@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject(:user) do
     FactoryGirl.build(:user,
-      name: "ryley",
+      username: "ryley",
       password: "good_password")
   end
 
