@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220194831) do
+ActiveRecord::Schema.define(version: 20170220224713) do
+
+  create_table "goals", force: :cascade do |t|
+    t.string   "title",                           null: false
+    t.text     "description",                     null: false
+    t.integer  "user_id",                         null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "privacy",     default: "private"
+    t.boolean  "completed",   default: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",      null: false
